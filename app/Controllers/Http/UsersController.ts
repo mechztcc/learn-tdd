@@ -1,7 +1,10 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class UsersController {
-  async store ({ response }: HttpContextContract) {
-		return response.status(201);
-	}
+  async store({ response, request }: HttpContextContract) {
+
+		const body = request.body()
+
+    return response.status(201).send({ email: body.email })
+  }
 }
