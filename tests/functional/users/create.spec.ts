@@ -11,7 +11,7 @@ test.group('Users create', () => {
 
     const response = await client.post('/users').json(payload);
 
-    response.assertStatus(404);
+    response.assertStatus(201);
 
   })  
 })
